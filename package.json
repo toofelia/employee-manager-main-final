@@ -1,7 +1,7 @@
 {
   "name": "authentication",
   "version": "1.0.0",
-  "description": "simple use of passport-local authentiction",
+  "description": "Employee Manager Login and Registration",
   "main": "server.js",
   "scripts": {
     "server": "nodemon server/index.js  --watch ./server",
@@ -14,7 +14,7 @@
   "keywords": [
     "none"
   ],
-  "author": "james foley",
+  "author": "Ekaterina Mekshenkova",
   "license": "MIT",
   "dependencies": {
     "cookie-session": "^1.4.0",
