@@ -10,6 +10,7 @@ const cookSession = require('cookie-session')
 
 // Importing our Login Service Used With the POST Login Route
 const loginService = require('./services/loginService')
+const signupService = require('./services/signupService')
 
 
 
@@ -101,21 +102,40 @@ app.use(express.static(path.join(__dirname, "../client"), {extensions: ["html", 
   })
     
  
- app.post('/login', (req, res)=>{
-   // POST name value pairs in body request
-   const credentials = {
-     email:req.body.email,
-     password:req.body.password
-    }
-    
-    
-    const isValidUser = loginService.authenticate(credentials)
-   
-    res.end()
- 
- })
 
+  app.get('/signup', (req, res)=>{
+    // user template placed inside the views directory
+    // res.render(view, data)   ejs.render(template, {data})
+    res.render('signup', {failMessage:"", email:"", password:"", username:""})
  
+  })
+
+  app.post('/signup', (req, res)=>{
+    // if your incomming name value pairs are alot then create an object
+     const credentials = {
+       email:req.body.email,
+       password:req.body.password,
+       username:req.body.username,
+     }
+     // isValidUser returns {user:null, emailWarning, passwordWarning}
+     // isValudUser.user !=null...
+     const registration =  signupService.signup(credentials);
+    
+        //if the isValidUser has a user returned
+        if(registration.success){
+              res.redirect('login');
+        } else {
+          res.render('signup', {
+            failMessage: registration.message, 
+            email:req.body.email,
+            password:req.body.password,
+            username:req.body.username,
+           })
+
+        }
+ 
+   })
+  
 
 // Final Middleware 
 // Catch all for any request not handled while express was
