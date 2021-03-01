@@ -136,6 +136,10 @@ app.use(express.static(path.join(__dirname, "../client"), {extensions: ["html", 
  
    })
   
+   app.get('/api/v1/users', (req, res)=>{
+    res.sendFile(path.join(__dirname, "../server/data/users.json"));
+  })
+
 
 // Final Middleware 
 // Catch all for any request not handled while express was

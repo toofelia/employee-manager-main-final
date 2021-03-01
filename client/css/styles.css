@@ -379,3 +379,23 @@ th {
   width: 1.25rem;
 }
 /*# sourceMappingURL=styles.css.map */
+
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.users {
+display: flex;
+justify-content: center;
+}
+
+.users ul {
+  display: flex;
+}
+
+.users ul li {
+  padding: 15px;
+
+}

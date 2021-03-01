@@ -7,7 +7,9 @@
 
 const fileService = require('./fileService')
 const filename = '../data/users.json';
- 
+
+const { v4: uuidv4 } = require('uuid');
+
 // common js module  import === require
 // export import es modules  Browser...
 // exports or module.exports  requre commonjs  NODE (BUNDLER RUN BROWSER)
@@ -30,6 +32,7 @@ exports.signup = (credential)=>{
    }, {emailExists: false, userExists: false});
 
    if(!checkUser.emailExists && !checkUser.userExists) {
+       credential.uid = uuidv4();
        users.push(credential);
        fileService.writeFileContents(filename, users);
        return {success: true, message: ("User " + username + " successfully registered.")};
