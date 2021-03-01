@@ -1,17 +1,17 @@
 # Employee Manager Registration Login App 
 
-### EJS TASKS
-- Setup EJS with Node and Express
-- Add the dashboard and the login to the views folder.
-- Add slots to the login template for the password and email warnings.
-- Send the template using res.render(template, {data})
-- Update the index.html page anchor elements to point to the login get route.
+The application allows to create account and to signup to access a securely protected dashboard.
+Also it has a page for displaying all registered users with their email, passwords, and ID.
 
-### Login Service Returns User Object
-- If value isValidUser true redirect to dashboard.
+The application is built with a client and server side validation.
+A working demo: https://employee-manager-main-final.herokuapp.com
+
+### Signup Service 
+- If value isValidUser true redirect to login page.
 - Set cookie session variable to true.
 
-### Login Service Returns NULL
+### Login Service 
+- If value redirect to login page.
 - Render login template and add warnings messages.
 - Adding client side javascript to template.
 
@@ -21,7 +21,7 @@ Validation includes:
 -- search input is not empty
 -- there is a matchig result
 
-A link to a working live demo: https://unruffled-leakey-607274.netlify.app/
+
 
 ### Package.json
 There are a few dependencies that are installed to make this app works:

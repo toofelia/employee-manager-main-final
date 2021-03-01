@@ -382,20 +382,33 @@ th {
 
 
 .container {
-  max-width: 960px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .users {
 display: flex;
-justify-content: center;
+flex-wrap: wrap;
+background-color: #e9e8e8;
+border-top: 2px solid rgb(69, 106, 207);
+border-bottom: 1px solid rgb(69, 106, 207);
+
 }
 
-.users ul {
+.user {
   display: flex;
+  width: 100%;
+  border-bottom: 1px solid rgb(69, 106, 207);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
 }
 
-.users ul li {
-  padding: 15px;
-
+.user-data {
+  width: 20%;
 }
+
+.user-data:last-child {
+  width: 40%;
+}
+
